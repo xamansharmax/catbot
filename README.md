@@ -25,8 +25,7 @@ A simple Telegram userbot based on Telethon .
   - [check this](https://catuserbot.gitbook.io/catuserbot/tutorial/self-host)
   
 ### Railway Deploy
-  - [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2Frailwayapp%2Fexamples%2Ftree%2Fmaster%2Fexamples%2Fflask)
-
+  - [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2Fbeastzx18%2Fcatbot&plugins=postgresql&envs=APP_ID%2CAPI_HASH%2CALIVE_NAME%2CCOMMAND_HAND_LER%2CENV%2CSTRING_SESSION%2CTG_BOT_TOKEN%2CTG_BOT_USERNAME%2CTZ%2CUPSTREAM_REPO&optionalEnvs=COMMAND_HAND_LER%2CTZ%2CUPSTREAM_REPO&APP_IDDesc=Get+it+from+--%3E+my.telegram.org&API_HASHDesc=Get+it+from+--%3E+my.telegram.org&ALIVE_NAMEDesc=Give+your+name+or+nickname+here&COMMAND_HAND_LERDesc=This+will+be+the+prefix+you+will+use.+This+will+trigger+your+bot+commands%2C+for+ex%3A+%5B+.alive+%5D+here+the+dot+%28+.+%29+is+your+prefix&ENVDesc=Don%27t+touch+this.+%E2%9A%A0%EF%B8%8F&STRING_SESSIONDesc=Get+this+value+by+running+python3+telesetup.py+locally+or+https%3A%2F%2Fgeneratestringsession.sandeep1709.repl.run&TG_BOT_TOKENDesc=Needed+for+inline+buttons+maker.+Make+a+bot+at+http%3A%2F%2Ftelegram.dog%2FBotFather+and+get+the+token+of+your+bot.Worth+it.+Get+it.&TG_BOT_USERNAMEDesc=Needed+for+inline+buttons+maker.+Make+a+bot+at+http%3A%2F%2Ftelegram.dog%2FBotFather+and+get+the+username+of+your+bot&TZDesc=Required+for+Correct+Time+on+autopic%2Fget+time.+Know+your+timezone+from+http%3A%2F%2Fwww.timezoneconverter.com%2Fcgi-bin%2Ffindzone.tzc&UPSTREAM_REPODesc=Use+either+goodcat+or+badcat+.if+you+need+custom+deploy+then+type+your+git+repo+link&ENVDefault=ANYTHING)
 
 ## Support
    <a href="https://t.me/catuserbot17"><img src="https://img.shields.io/badge/Channel%20Support%3F-yes-green?&style=flat-square?&logo=telegram" width=220px></a></p>
