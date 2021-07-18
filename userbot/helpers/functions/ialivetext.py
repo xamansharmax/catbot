@@ -83,9 +83,13 @@ async def catalive(StartTime):
         dyno = f"{AppHours}h {AppMinutes}m/{hours}h {minutes}m"
     except Exception as e:
         dyno = e
+    if Config.HEROKU_API_KEY:
+        usage = dyno
+    else:
+        usage = "Heroku api missing !"
     return f"Catuserbot Stats\
                  \n\nDatabase : {check_sgnirts}\
                   \nSudo : {sudo}\
                   \nUptime : {uptime}\
-                  \nDyno : {dyno}\
+                  \nDyno : {usage}\
                   "
