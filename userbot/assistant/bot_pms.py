@@ -476,3 +476,7 @@ async def antif_on_msg(event):
         raise StopPropagation
     elif user_id in FloodConfig.BANNED_USERS:
         FloodConfig.BANNED_USERS.remove(user_id)
+
+
+
+

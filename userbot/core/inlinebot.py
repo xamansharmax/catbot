@@ -29,6 +29,7 @@ from .logger import logging
 
 LOGS = logging.getLogger(__name__)
 
+HELP_PIC = gvarstatus("HELP_PIC")
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 CATLOGO = "https://telegra.ph/file/493268c1f5ebedc967eba.jpg"
 tr = Config.COMMAND_HAND_LER
@@ -368,13 +369,20 @@ async def inline_handler(event):  # sourcery no-metrics
                 json.dump(newsecret, open(secret, "w"))
         elif string == "help":
             _result = main_menu()
-            result = builder.article(
-                title="© CatUserbot Help",
-                description="Help menu for CatUserbot",
-                text=_result[0],
-                buttons=_result[1],
-                link_preview=False,
-            )
+            if HELP_PIC:
+                result = builder.photo(
+                    HELP_PIC,
+                    text=_result[0],
+                    buttons=_result[1],
+                )
+            elif not HELP_PIC:
+                result = builder.article(
+                    title="© CatUserbot Help",
+                    description="Help menu for CatUserbot",
+                    text=_result[0],
+                    buttons=_result[1],
+                    link_preview=False,
+                )
             await event.answer([result] if result else None)
         elif str_y[0].lower() == "ytdl" and len(str_y) == 2:
             link = get_yt_video_id(str_y[1].strip())
@@ -688,3 +696,31 @@ async def on_plug_in_callback_query_handler(event):
         \n**Category :** `{category_plugins}`\
         \n\n**✘ Intro :**\n{CMD_INFO[cmd][0]}"
     await event.edit(text, buttons=buttons)
+
+
+
+
+@catub.bot_cmd(f"^/inline$")
+async def bot_help_menu(event):
+	inlinemenu = main_menu()
+	if HELP_PIC:
+		await event.client.tgbot.send_message(
+			entity=event.chat_id,
+			message=inlinemenu[0],
+			parse_mode="html",
+			file=HELP_PIC,
+			link_preview=False,
+			buttons=inlinemenu[1],
+		)
+	elif not HELP_PIC:
+		await event.client.tgbot.send_message(
+			entity=event.chat_id,
+			message=inlinemenu[0],
+			parse_mode="html",
+			link_preview=False,
+			buttons=inlinemenu[1],
+		)
+	else:
+		return
+
+
