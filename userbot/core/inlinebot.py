@@ -702,26 +702,33 @@ async def on_plug_in_callback_query_handler(event):
 
 @catub.bot_cmd(f"^/inline$")
 async def bot_help_menu(event):
-	inlinemenu = main_menu()
-	if HELP_PIC:
-		await event.client.send_message(
-			entity=event.chat_id,
-			message=inlinemenu[0],
-			parse_mode="html",
-			file=HELP_PIC,
-			link_preview=False,
-			buttons=inlinemenu[1],
-		)
-	elif not HELP_PIC:
-		await event.client.send_message(
-			entity=event.chat_id,
-			message=inlinemenu[0],
-			parse_mode="html",
-			link_preview=False,
-			buttons=inlinemenu[1],
-		)
+	chat = event.get_chat()
+	if chat.id == Config.OWNER_ID:
+		inlinemenu = main_menu()
+		if HELP_PIC:
+			await event.client.send_message(
+				entity=event.chat_id,
+				message=inlinemenu[0],
+				parse_mode="html",
+				file=HELP_PIC,
+				link_preview=False,
+				buttons=inlinemenu[1],
+			)
+		elif not HELP_PIC:
+			await event.client.send_message(
+				entity=event.chat_id,
+				message=inlinemenu[0],
+				parse_mode="html",
+				link_preview=False,
+				buttons=inlinemenu[1],
+			)
+		else:
+			return
 	else:
-		return
+		await event.client.send_message(
+			entity=event.chat_id,
+			message="Sorry, this command only works for the owner of this bot."
+			)
 
 
 
