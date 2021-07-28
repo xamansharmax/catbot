@@ -709,7 +709,7 @@ async def bot_help_menu(event):
 			await event.client.send_message(
 				entity=event.chat_id,
 				message=inlinemenu[0],
-				parse_mode="html",
+				parse_mode="markdown",
 				file=HELP_PIC,
 				link_preview=False,
 				buttons=inlinemenu[1],
@@ -718,7 +718,7 @@ async def bot_help_menu(event):
 			await event.client.send_message(
 				entity=event.chat_id,
 				message=inlinemenu[0],
-				parse_mode="html",
+				parse_mode="markdown",
 				link_preview=False,
 				buttons=inlinemenu[1],
 			)

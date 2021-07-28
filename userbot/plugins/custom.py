@@ -21,6 +21,7 @@ vlist = [
     "HELP_EMOJI",
     "HELP_TEXT",
     "IALIVE_PIC",
+    "HELP_PIC",
     "PM_PIC",
     "PM_TEXT",
     "PM_BLOCK",
@@ -29,7 +30,7 @@ vlist = [
     "NO_OF_ROWS_IN_HELP",
     "NO_OF_COLUMNS_IN_HELP",
     "CUSTOM_STICKER_PACKNAME",
-]
+] 
 
 oldvars = {
     "PM_PIC": "pmpermit_pic",
