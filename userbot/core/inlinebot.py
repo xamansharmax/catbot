@@ -700,7 +700,7 @@ async def on_plug_in_callback_query_handler(event):
 
 
 
-@catub.bot_cmd(f"^/inline$")
+@catub.bot_cmd(pattern=f"^/inline$")
 async def bot_help_menu(event):
 	chat = event.chat.id
 	if chat == Config.OWNER_ID:
