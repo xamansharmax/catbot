@@ -704,7 +704,7 @@ async def on_plug_in_callback_query_handler(event):
 async def bot_help_menu(event):
 	inlinemenu = main_menu()
 	if HELP_PIC:
-		await event.client.tgbot.send_message(
+		await event.client.send_message(
 			entity=event.chat_id,
 			message=inlinemenu[0],
 			parse_mode="html",
@@ -713,7 +713,7 @@ async def bot_help_menu(event):
 			buttons=inlinemenu[1],
 		)
 	elif not HELP_PIC:
-		await event.client.tgbot.send_message(
+		await event.client.send_message(
 			entity=event.chat_id,
 			message=inlinemenu[0],
 			parse_mode="html",
