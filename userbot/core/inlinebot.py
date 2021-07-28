@@ -702,8 +702,8 @@ async def on_plug_in_callback_query_handler(event):
 
 @catub.bot_cmd(f"^/inline$")
 async def bot_help_menu(event):
-	chat = event.get_chat()
-	if chat.id == Config.OWNER_ID:
+	chat = event.chat.id
+	if chat == Config.OWNER_ID:
 		inlinemenu = main_menu()
 		if HELP_PIC:
 			await event.client.send_message(
