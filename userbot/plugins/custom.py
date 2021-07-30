@@ -79,7 +79,7 @@ async def bad(event):  # sourcery no-metrics
     reply = await event.get_reply_message()
     if not vinfo and reply:
         vinfo = reply.text
-    if vname in vlist:
+    if vname:
         if vname in oldvars:
             vname = oldvars[vname]
         if cmd == "set":
@@ -96,10 +96,15 @@ async def bad(event):  # sourcery no-metrics
                 event, f"📑 Value of **{vname}** is changed to :- `{vinfo}`", time=20
             )
         if cmd == "get":
-            var_data = gvarstatus(vname)
-            await edit_delete(
-                event, f"📑 Value of **{vname}** is  `{var_data}`", time=20
-            )
+            try:
+                var_data = gvarstatus(vname)
+                await edit_delete(
+                    event, f"📑 Value of **{vname}** is  `{var_data}`", time=20
+                )
+            except Exception as e:
+                await edit_delete(
+                    event, "Sorry the var does not exist in my database"
+                    )
         elif cmd == "del":
             delgvar(vname)
             await edit_delete(
@@ -110,7 +115,7 @@ async def bad(event):  # sourcery no-metrics
     else:
         await edit_delete(
             event, f"**📑 Give correct var name from the list :\n\n**{vnlist}", time=60
-        )
+        ) # will fix this later
 
 
 @catub.cat_cmd(
