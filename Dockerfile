@@ -11,4 +11,5 @@ RUN pip3 install requirements.txt
 
 ENV PATH="/home/userbot/bin:$PATH"
 
+# running command
 CMD ["python3","-m","userbot"]
