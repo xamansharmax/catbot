@@ -1,4 +1,8 @@
+import os
+import signal
+import sys
 import time
+from asyncio.exceptions import CancelledError
 
 import heroku3
 
