@@ -1,5 +1,6 @@
 import sys
 
+from pyrogram import Client
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
 
@@ -41,3 +42,17 @@ catub.tgbot = tgbot = CatUserBotClient(
     auto_reconnect=True,
     connection_retries=None,
 ).start(bot_token=Config.TG_BOT_TOKEN)
+
+
+
+
+async def pyrocatbot():
+	global catbot
+	catbot = await Client(
+		session_name="pyro_catbot",
+		api_id=Config.APP_ID,
+		api_hash=Config.API_HASH,
+		bot_token=Config.TG_BOT_TOKEN
+		).start()
+
+
