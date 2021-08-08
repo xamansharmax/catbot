@@ -31,7 +31,6 @@ async def setup_bot():
     To set up bot for userbot
     """
     try:
-    	global botusername
         await catub.connect()
         await pyrocatbot()
         config = await catub(functions.help.GetConfigRequest())
@@ -46,8 +45,6 @@ async def setup_bot():
                 catub.session.save()
                 break
         bot_details = await catub.tgbot.get_me()
-        bot_info = await catbot.get_me()
-        botusername = f"@{bot_info.username}"
         Config.TG_BOT_USERNAME = f"@{bot_details.username}"
         # await catub.start(bot_token=Config.TG_BOT_USERNAME)
         catub.me = await catub.get_me()

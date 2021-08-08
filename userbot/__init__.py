@@ -16,6 +16,7 @@ catub.version = __version__
 catub.tgbot.version = __version__
 LOGS = logging.getLogger("CatUserbot")
 bot = catub
+catbot = catbot
 
 StartTime = time.time()
 catversion = "3.0.3"
