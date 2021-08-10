@@ -12,7 +12,7 @@ from userbot import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
 
 from ..Config import Config
 from ..core.logger import logging
-from ..core.session import catub, pyrocatbot
+from ..core.session import catub
 from ..helpers.utils import install_pip
 from ..sql_helper.global_collection import (
     del_keyword_collectionlist,
@@ -32,7 +32,6 @@ async def setup_bot():
     """
     try:
         await catub.connect()
-        await pyrocatbot()
         config = await catub(functions.help.GetConfigRequest())
         for option in config.dc_options:
             if option.ip_address == catub.session.server_address:
