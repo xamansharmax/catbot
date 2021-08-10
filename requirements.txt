@@ -42,7 +42,6 @@ pygments
 pylast
 pymediainfo
 PyMuPDF
-pyrogram
 pySmartDL
 python-barcode
 python-dotenv

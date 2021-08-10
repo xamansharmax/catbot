@@ -1,6 +1,5 @@
 import sys
 
-from pyrogram import Client
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
 
