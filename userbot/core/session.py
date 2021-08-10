@@ -42,5 +42,5 @@ catub.tgbot = tgbot = CatUserBotClient(
     connection_retries=None,
 ).start(bot_token=Config.TG_BOT_TOKEN)
 
-
+catbot = None
 
