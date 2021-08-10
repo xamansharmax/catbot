@@ -4,7 +4,7 @@ import heroku3
 
 from .Config import Config
 from .core.logger import logging
-from .core.session import catub, catbot
+from .core.session import catub
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
 __version__ = "3.0.2"
@@ -16,7 +16,7 @@ catub.version = __version__
 catub.tgbot.version = __version__
 LOGS = logging.getLogger("CatUserbot")
 bot = catub
-catbot = catbot
+
 
 StartTime = time.time()
 catversion = "3.0.3"

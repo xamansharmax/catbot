@@ -45,14 +45,3 @@ catub.tgbot = tgbot = CatUserBotClient(
 
 
 
-
-async def pyrocatbot():
-	global catbot
-	catbot = await Client(
-		session_name="pyro_catbot",
-		api_id=Config.APP_ID,
-		api_hash=Config.API_HASH,
-		bot_token=Config.TG_BOT_TOKEN
-		).start()
-
-
